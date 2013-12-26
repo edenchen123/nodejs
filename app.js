@@ -12,6 +12,7 @@ var path = require('path');
 var app = express();
 
 // all environments
+console.log("default port is : " +process.env.PORT);
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
