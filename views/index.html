@@ -1,10 +1,25 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myApp">
 <head>
     <title><%= title %></title>
+    <link href="css/app.css" media="all" rel="stylesheet" type="text/css">
+
+    <script src="js/lib/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="js/lib/angular/angular-route.min.js" type="text/javascript"></script>
+    <script src="js/lib/angular/angular-resource.min.js" type="text/javascript"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/controllers.js" type="text/javascript"></script>
+    <script src="js/directives.js" type="text/javascript"></script>
+    <script src="js/filters.js" type="text/javascript"></script>
+    <script src="js/services.js" type="text/javascript"></script>
+
 </head>
 <body>
-<h1>Hello</h1>
-
+<h1>Welcome To My Blog</h1>
+<a href="/">Home</a>
+<a href="/addPost">Add Post</a>
+<div ng-view></div>
 </body>
 </html>

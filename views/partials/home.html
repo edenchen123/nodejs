@@ -1,0 +1,8 @@
+<p>We have {{posts.length}} post(s)</p>
+<ul>
+    <li ng-repeat="p in posts">
+        <h3>{{p.title}}</h3>
+        <div class="post-text">{{p.text}}</div>
+        <button ng-click="getPost(p.id);">more</button>
+    </li>
+</ul>

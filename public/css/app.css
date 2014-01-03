@@ -1,0 +1,15 @@
+/* app css stylesheet */
+
+body {
+    padding:70px;
+    background-color: #eeeeee;
+}
+.post-text{
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+  
