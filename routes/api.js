@@ -1,30 +1,29 @@
-var posts = [
+var primaryLog = [{
+    "level":"INFO",
+    "timestamp":"2014-01-06T02:14:46.938Z",
+    "message":"127.0.0.1 - - AAAAAAAAAAAAAAAVBBBBB"
+},
     {
-        "id": "1",
-        "title": "Lorem ipsum",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "level":"INFO",
+        "timestamp":"2014-01-06T02:14:46.938Z",
+        "message":"127.0.0.1 - - BBBBBBBBBBBBBBBBBBBBBAAAAAA"
     },
     {
-        "id": "2",
-        "title": "Sed egestas",
-        "text": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus."
-    }
-];
+        "level":"INFO",
+        "timestamp":"2014-01-06T02:14:46.938Z",
+        "message":"127.0.0.1 - - CCCCCCCCCCCCCCCCCCCCCCCCCCBBBBBBBBBBBBBBB"
+    },{
+        "level":"INFO",
+        "timestamp":"2014-01-06T02:14:46.938Z",
+        "message":"127.0.0.1 - - DDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEE"
+    },
+    {
+        "level":"INFO",
+        "timestamp":"2014-01-06T02:14:46.938Z",
+        "message":"127.0.0.1 - - FFFFFFFFFFFFFFFFFFFFFFFEEEEEEEEEEEEEEEEEEE"
+    }];
 
-exports.posts=function(req,res){
-    res.json(posts);
-};
-
-exports.getPost = function(req,res){
-    var id = req.params.id;
-    if(id){
-        var post = {};
-        posts.forEach(function(p,i){
-            if(p.id == id){
-                res.json(p);
-            }
-        });
-    }else{
-        res.json(false);
-    }
+exports.getLog=function(req,res){
+    var type = req.params.type;
+    res.json(primaryLog);
 };

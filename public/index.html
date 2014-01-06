@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp" data-ng-controller="HomeController">
+<head>
+    <title>Log Reader</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/app.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/ng-grid.css" media="all" rel="stylesheet" type="text/css">
+
+    <script src="js/lib/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="js/lib/angular/angular-route.min.js" type="text/javascript"></script>
+    <script src="js/lib/angular/angular-resource.min.js" type="text/javascript"></script>
+    <script src="js/lib/ng-grid-2.0.7.min.js" type="text/javascript"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/controllers.js" type="text/javascript"></script>
+    <script src="js/directives.js" type="text/javascript"></script>
+    <script src="js/filters.js" type="text/javascript"></script>
+    <script src="js/services.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">ESP Log Reader</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                  <div class="form-group">
+                      <select style="width: 200px" ng-model="logType" ng-change="getLog()">
+                          <option value=""></option>
+                          <option value="all">All</option>
+                          <option value="info">Info</option>
+                          <option value="error">Error</option>
+                      </select>
+                  </div>
+                <input ng-model="searchStr" placeholder="keywords..">
+                <div class="btn-group btn-group-xs">
+                    <button type="button" class="btn btn-default">Prev</button>
+                    <button type="button" class="btn btn-default">Next</button>
+                </div>
+             </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="panel panel-primary" ng-class="{'all':'panel-primary', 'info': 'panel-info', 'error': 'panel-danger'}[primaryLog.type]">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{logType || 'Choose Ur Log'}}</h3>
+        </div>
+        <div class="panel-body" style="padding: 0px">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+</body>
+</html>

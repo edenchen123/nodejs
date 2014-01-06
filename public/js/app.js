@@ -2,9 +2,8 @@
 
 
 // Declare app level module which depends on filters, and services
-var myApp = angular.module('myApp', ['ngRoute','ngResource']).
+var myApp = angular.module('myApp', ['ngRoute','ngResource','ngGrid']).
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'HomeController'});
-    $routeProvider.when('/post', {templateUrl: 'partials/post.html', controller: 'PostController'});
+    $routeProvider.when('/', {templateUrl: 'index.html', controller: 'HomeController'});
     $routeProvider.otherwise({redirectTo: '/'});
   }]);
